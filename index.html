@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+
+<body>
+    <h1>JSON</h1>
+    <h3>JavaScript Object Notation</h3>
+    <ul id="name-list">
+
+    </ul>
+
+    <!-- <script>
+        // practice JSON.stringify & JSON.parse methods 
+        const user = {
+            id: 21,
+            name: 'Fahim',
+            address: {
+                city: 'Dhaka',
+                country: 'Bangladesh',
+            },
+            profession: 'IT'
+        }
+
+        const userPost = JSON.stringify(user);
+        console.log(userPost);
+
+        const userGet = JSON.parse(userPost);
+        console.log(userGet);
+    </script> -->
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(json => console.log(json))
+
+        function displayUser(users) {
+            const userName = users.map(user => user.username);
+            console.log(userName);
+            // const ul = document.getElementById('name-list');
+            // for (let i = 0; i < userName.length; i++) {
+            //     const username = userName[i]
+            //     const li = document.createElement('li')
+            //     li.innerText = username
+            //     ul.appendChild(li)
+            // }
+        }
+    </script>
+</body>
+
+</html>
